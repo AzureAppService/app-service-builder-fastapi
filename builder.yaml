@@ -1,0 +1,9 @@
+components:
+  - name: web
+    role: web
+    platform: python
+    path: /
+    run:
+      port: 8080
+      start: python main.py
+      healthCheckPath: /health

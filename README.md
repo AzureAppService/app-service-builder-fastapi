@@ -16,8 +16,20 @@ local tests do not establish cloud deployment success or regional availability.
 
 ![FastAPI root page with sample actions, inline health feedback, customization help, and local application details](docs/images/sample.png)
 
-Rendered locally at `/` with sample settings. This screenshot is not evidence of
+**LOCAL — Microsoft Edge, 1440px desktop, root `/`.** Rendered with sample settings. This screenshot is not evidence of
 an Azure deployment.
+
+The split daylight composition keeps FastAPI's server-rendered routes and real
+inline health check. Edit `main.py` for content and `public/brand/family.v1.css`
+for the visual family; baseline styles remain in `public/styles.v2.css`.
+
+### Logo provenance
+
+`public/brand/builder.svg` is the supplied official App Service Builder mark.
+`public/brand/fastapi.svg` is the unmodified [official FastAPI SVG](https://fastapi.tiangolo.com/img/logo-margin/logo-teal.svg).
+FastAPI is a trademark of its respective owner. Logos identify the stack;
+no endorsement is implied. Framework and Python documentation are separate from
+App Service Builder documentation.
 
 **Check app health** reads this app's `/health` JSON endpoint and displays the
 result in place, including failures and retry guidance. It does not report Azure

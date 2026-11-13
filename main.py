@@ -49,10 +49,21 @@ def page(title: str, content: str) -> str:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{html.escape(title)}</title>
     <link rel="stylesheet" href="/assets/styles.v2.css">
+    <link rel="stylesheet" href="/assets/brand/family.v1.css">
     <script type="module" src="/assets/health.v1.js"></script>
   </head>
   <body>
-    <main>
+    <main class="sample-sheet">
+      <header class="sample-header">
+        <a class="sample-brand" href="/"><img src="/assets/brand/builder.svg" alt="" width="32" height="32">App Service Builder</a>
+        <nav aria-label="Documentation">
+          <a href="https://fastapi.tiangolo.com/">FastAPI documentation</a>
+          <a href="https://docs.python.org/3/">Python documentation</a>
+          <a href="https://builder.appservice.azure.com/docs/">App Service Builder documentation</a>
+        </nav>
+      </header>
+      <div class="sample-content">
+      <div class="ecosystem-logo"><img class="wordmark" src="/assets/brand/fastapi.svg" alt="FastAPI" width="156" height="52"></div>
       <p class="eyebrow">App Service Builder / FastAPI</p>
       <h1>{html.escape(title)}</h1>
       {content}
@@ -64,6 +75,7 @@ def page(title: str, content: str) -> str:
         <div><dt>Build setting</dt><dd>{info["buildMarker"]}</dd></div>
         <div><dt>Runtime setting</dt><dd>{info["runtimeMarker"]}</dd></div>
       </dl>
+      </div>
     </main>
   </body>
 </html>"""
@@ -83,13 +95,15 @@ async def home() -> str:
       <details>
         <summary>Customize this sample</summary>
         <p>In your fork, edit the home page title and content in <code>main.py</code>
-        and the styles in <code>public/styles.v2.css</code>. Commit your changes and
+        and the visual-family styles in <code>public/brand/family.v1.css</code>. Commit your changes and
         deploy your fork through your Builder App.</p>
       </details>
-      <nav class="documentation" aria-label="Documentation">
-        <a href="https://fastapi.tiangolo.com/">Framework documentation</a>
-        <a href="https://builder.appservice.azure.com/docs/">App Service Builder documentation</a>
-      </nav>""",
+      <details>
+        <summary>Logo sources &amp; notices</summary>
+        <p>Unmodified <a href="https://fastapi.tiangolo.com/">FastAPI artwork</a>
+        identifies this framework. FastAPI is a trademark of its respective owner.
+        App Service Builder uses its supplied official mark. No endorsement implied.</p>
+      </details>""",
     )
 
 

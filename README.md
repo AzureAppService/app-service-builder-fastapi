@@ -1,7 +1,7 @@
 # App Service Builder: FastAPI sample
 
 A standalone FastAPI application served by Uvicorn for learning how to deploy
-GitHub source with [Azure App Service Builder](https://builderapps.azure.com/docs/).
+GitHub source with [Azure App Service Builder](https://builder.appservice.azure.com/docs/).
 It serves HTML pages, JSON API endpoints, and a stylesheet from one Python
 process. There is no compilation step, database, external service, or parent
 workspace dependency.
@@ -11,6 +11,31 @@ and testing, not as a production application template.** The original sample
 was successfully deployed with the included manifest. The renamed repository
 must still be deployed and verified in your authorized preview environment;
 local tests do not establish cloud deployment success or regional availability.
+
+## Sample preview
+
+![FastAPI root page with sample actions, inline health feedback, customization help, and local application details](docs/images/sample.png)
+
+**LOCAL — Microsoft Edge, 1440px desktop, root `/`.** Rendered with sample settings. This screenshot is not evidence of
+an Azure deployment.
+
+The split daylight composition keeps FastAPI's server-rendered routes and real
+inline health check. Edit `main.py` for content and `public/brand/family.v1.css`
+for the visual family; baseline styles remain in `public/styles.v2.css`.
+
+### Logo provenance
+
+`public/brand/builder.svg` is the supplied official App Service Builder mark.
+`public/brand/fastapi.svg` is the unmodified [official FastAPI SVG](https://fastapi.tiangolo.com/img/logo-margin/logo-teal.svg).
+FastAPI is a trademark of its respective owner. Logos identify the stack;
+no endorsement is implied. Framework and Python documentation are separate from
+App Service Builder documentation.
+
+**Check app health** reads this app's `/health` JSON endpoint and displays the
+result in place, including failures and retry guidance. It does not report Azure
+deployment status. **Customize this sample** explains which files to edit in
+your fork; it does not guess your repository or app URL. Framework and App
+Service Builder documentation are labeled separately.
 
 ## Features
 
@@ -32,7 +57,7 @@ local tests do not establish cloud deployment success or regional availability.
 - Optional: [PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell)
   for the endpoint verification script.
 
-FastAPI **0.115.12** and Uvicorn **0.34.3** are pinned in `requirements.txt`.
+FastAPI **0.162.0** and Uvicorn **0.54.0** are pinned in `requirements.txt`.
 Development dependencies are listed separately in `requirements-dev.txt`.
 Transitive dependencies are resolved by pip; these files are not a complete
 dependency lock.
@@ -134,7 +159,8 @@ Builder Portal.
 | `/api/status` | HTTP 200, JSON availability status and timestamp |
 | `/api/version` | HTTP 200, JSON application, FastAPI, Python, and public deployment markers |
 | `/api/request` | HTTP 200, JSON method, path, and selected request headers |
-| `/assets/styles.v1.css` | HTTP 200, stylesheet |
+| `/assets/styles.v2.css` | HTTP 200, stylesheet |
+| `/assets/health.v1.js` | HTTP 200, browser-only inline health action |
 | `/openapi.json` | HTTP 200, generated OpenAPI schema |
 | `/api/missing` | HTTP 404, JSON API error |
 | `/missing-page` | HTTP 404, HTML not-found page |
@@ -170,7 +196,7 @@ Keep this file at the repository root: the original deployment required it.
 
 ## Deploy your fork through Builder Portal
 
-Follow the [Portal quickstart](https://builderapps.azure.com/docs/quickstarts/portal/)
+Follow the [Portal quickstart](https://builder.appservice.azure.com/docs/quickstarts/portal/)
 for your authorized Private Preview environment:
 
 1. Commit and push the sample to the `main` branch of your GitHub repository.
@@ -200,7 +226,7 @@ or private information in these values.**
 Configure them through Portal **Variables**, then deploy to apply them to the
 running application. Saving a variable alone does not establish that the
 current deployment changed. See the
-[variables guide](https://builderapps.azure.com/docs/guides/variables/).
+[variables guide](https://builder.appservice.azure.com/docs/guides/variables/).
 
 ### Update and redeploy
 
@@ -217,9 +243,9 @@ Deleting the app does not delete your GitHub repository or local clone.
 
 ## Resources and contributions
 
-- [App Service Builder documentation](https://builderapps.azure.com/docs/)
-- [Sample catalog](https://builderapps.azure.com/docs/samples/)
-- [Manifest guide](https://builderapps.azure.com/docs/guides/builder-yaml/)
+- [App Service Builder documentation](https://builder.appservice.azure.com/docs/)
+- [Sample catalog](https://builder.appservice.azure.com/docs/samples/)
+- [Manifest guide](https://builder.appservice.azure.com/docs/guides/builder-yaml/)
 - [Contributing](CONTRIBUTING.md)
 - [Code of Conduct](.github/CODE_OF_CONDUCT.md)
 - [Security reporting](SECURITY.md)

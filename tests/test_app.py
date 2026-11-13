@@ -41,7 +41,7 @@ def test_root_actions_keep_health_inline_and_customization_local():
     assert "In your fork" in home.text
     assert 'href="https://fastapi.tiangolo.com/">Framework documentation' in home.text
     assert (
-        'href="https://builderapps.azure.com/docs/">App Service Builder documentation'
+        'href="https://builder.appservice.azure.com/docs/">App Service Builder documentation'
         in home.text
     )
     for asset in ["/assets/styles.v2.css", "/assets/health.v1.js"]:

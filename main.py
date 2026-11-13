@@ -88,7 +88,7 @@ async def home() -> str:
       </details>
       <nav class="documentation" aria-label="Documentation">
         <a href="https://fastapi.tiangolo.com/">Framework documentation</a>
-        <a href="https://builderapps.azure.com/docs/">App Service Builder documentation</a>
+        <a href="https://builder.appservice.azure.com/docs/">App Service Builder documentation</a>
       </nav>""",
     )
 

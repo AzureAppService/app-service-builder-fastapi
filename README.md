@@ -1,7 +1,7 @@
 # App Service Builder: FastAPI sample
 
 A standalone FastAPI application served by Uvicorn for learning how to deploy
-GitHub source with [Azure App Service Builder](https://builderapps.azure.com/docs/).
+GitHub source with [Azure App Service Builder](https://builder.appservice.azure.com/docs/).
 It serves HTML pages, JSON API endpoints, and a stylesheet from one Python
 process. There is no compilation step, database, external service, or parent
 workspace dependency.
@@ -184,7 +184,7 @@ Keep this file at the repository root: the original deployment required it.
 
 ## Deploy your fork through Builder Portal
 
-Follow the [Portal quickstart](https://builderapps.azure.com/docs/quickstarts/portal/)
+Follow the [Portal quickstart](https://builder.appservice.azure.com/docs/quickstarts/portal/)
 for your authorized Private Preview environment:
 
 1. Commit and push the sample to the `main` branch of your GitHub repository.
@@ -214,7 +214,7 @@ or private information in these values.**
 Configure them through Portal **Variables**, then deploy to apply them to the
 running application. Saving a variable alone does not establish that the
 current deployment changed. See the
-[variables guide](https://builderapps.azure.com/docs/guides/variables/).
+[variables guide](https://builder.appservice.azure.com/docs/guides/variables/).
 
 ### Update and redeploy
 
@@ -231,9 +231,9 @@ Deleting the app does not delete your GitHub repository or local clone.
 
 ## Resources and contributions
 
-- [App Service Builder documentation](https://builderapps.azure.com/docs/)
-- [Sample catalog](https://builderapps.azure.com/docs/samples/)
-- [Manifest guide](https://builderapps.azure.com/docs/guides/builder-yaml/)
+- [App Service Builder documentation](https://builder.appservice.azure.com/docs/)
+- [Sample catalog](https://builder.appservice.azure.com/docs/samples/)
+- [Manifest guide](https://builder.appservice.azure.com/docs/guides/builder-yaml/)
 - [Contributing](CONTRIBUTING.md)
 - [Code of Conduct](.github/CODE_OF_CONDUCT.md)
 - [Security reporting](SECURITY.md)

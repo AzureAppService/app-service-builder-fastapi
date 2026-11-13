@@ -48,7 +48,8 @@ def page(title: str, content: str) -> str:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{html.escape(title)}</title>
-    <link rel="stylesheet" href="/assets/styles.v1.css">
+    <link rel="stylesheet" href="/assets/styles.v2.css">
+    <script type="module" src="/assets/health.v1.js"></script>
   </head>
   <body>
     <main>
@@ -73,7 +74,22 @@ async def home() -> str:
     return page(
         "FastAPI backend is running",
         '<p>The application started successfully and is serving HTTP traffic.</p>'
-        '<p><a href="/products/widget-1">Open the deep route</a></p>',
+        f"""<nav aria-label="Sample actions">
+        <a class="button" href="/products/widget-1">Open the deep route</a>
+        <button class="secondary" type="button" data-health-app="{APP_NAME}">Check app health</button>
+        <a href="/api/version">View version JSON</a>
+      </nav>
+      <p class="health-result" role="status">Check the JSON health endpoint without leaving this page.</p>
+      <details>
+        <summary>Customize this sample</summary>
+        <p>In your fork, edit the home page title and content in <code>main.py</code>
+        and the styles in <code>public/styles.v2.css</code>. Commit your changes and
+        deploy your fork through your Builder App.</p>
+      </details>
+      <nav class="documentation" aria-label="Documentation">
+        <a href="https://fastapi.tiangolo.com/">Framework documentation</a>
+        <a href="https://builderapps.azure.com/docs/">App Service Builder documentation</a>
+      </nav>""",
     )
 
 

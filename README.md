@@ -12,6 +12,19 @@ was successfully deployed with the included manifest. The renamed repository
 must still be deployed and verified in your authorized preview environment;
 local tests do not establish cloud deployment success or regional availability.
 
+## Sample preview
+
+![FastAPI root page with sample actions, inline health feedback, customization help, and local application details](docs/images/sample.png)
+
+Rendered locally at `/` with sample settings. This screenshot is not evidence of
+an Azure deployment.
+
+**Check app health** reads this app's `/health` JSON endpoint and displays the
+result in place, including failures and retry guidance. It does not report Azure
+deployment status. **Customize this sample** explains which files to edit in
+your fork; it does not guess your repository or app URL. Framework and App
+Service Builder documentation are labeled separately.
+
 ## Features
 
 - Server-rendered landing and product pages, including direct deep links.
@@ -32,7 +45,7 @@ local tests do not establish cloud deployment success or regional availability.
 - Optional: [PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell)
   for the endpoint verification script.
 
-FastAPI **0.115.12** and Uvicorn **0.34.3** are pinned in `requirements.txt`.
+FastAPI **0.162.0** and Uvicorn **0.54.0** are pinned in `requirements.txt`.
 Development dependencies are listed separately in `requirements-dev.txt`.
 Transitive dependencies are resolved by pip; these files are not a complete
 dependency lock.
@@ -134,7 +147,8 @@ Builder Portal.
 | `/api/status` | HTTP 200, JSON availability status and timestamp |
 | `/api/version` | HTTP 200, JSON application, FastAPI, Python, and public deployment markers |
 | `/api/request` | HTTP 200, JSON method, path, and selected request headers |
-| `/assets/styles.v1.css` | HTTP 200, stylesheet |
+| `/assets/styles.v2.css` | HTTP 200, stylesheet |
+| `/assets/health.v1.js` | HTTP 200, browser-only inline health action |
 | `/openapi.json` | HTTP 200, generated OpenAPI schema |
 | `/api/missing` | HTTP 404, JSON API error |
 | `/missing-page` | HTTP 404, HTML not-found page |

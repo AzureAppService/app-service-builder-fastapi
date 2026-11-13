@@ -33,6 +33,22 @@ def test_reports_health_and_deployment_identity():
     assert app_version["runtime"]
 
 
+def test_root_actions_keep_health_inline_and_customization_local():
+    home = client.get("/")
+    assert 'data-health-app="app-service-builder-fastapi">Check app health' in home.text
+    assert 'role="status"' in home.text
+    assert "<summary>Customize this sample</summary>" in home.text
+    assert "In your fork" in home.text
+    assert 'href="https://fastapi.tiangolo.com/">Framework documentation' in home.text
+    assert (
+        'href="https://builderapps.azure.com/docs/">App Service Builder documentation'
+        in home.text
+    )
+    for asset in ["/assets/styles.v2.css", "/assets/health.v1.js"]:
+        assert asset in home.text
+        assert client.get(asset).status_code == 200
+
+
 def test_reports_availability_and_serves_stylesheet():
     status = client.get("/api/status")
     stylesheet = client.get("/assets/styles.v1.css")

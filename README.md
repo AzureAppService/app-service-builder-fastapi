@@ -57,7 +57,7 @@ Service Builder documentation are labeled separately.
 - Optional: [PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell)
   for the endpoint verification script.
 
-FastAPI **0.162.0** and Uvicorn **0.54.0** are pinned in `requirements.txt`.
+FastAPI **0.163.1** and Uvicorn **0.54.0** are pinned in `requirements.txt`.
 Development dependencies are listed separately in `requirements-dev.txt`.
 Transitive dependencies are resolved by pip; these files are not a complete
 dependency lock.
